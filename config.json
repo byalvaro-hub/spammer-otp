@@ -1,0 +1,38 @@
+{
+    "endpoint": "https://web.whatsapp.com/app/register",
+    "threads": 100,
+    "delay": 0.2,
+    "retry": 5,
+    "timeout": 5,
+    "proxy_enabled": true,
+    "proxy_file": "data/proxies.txt",
+    "ua_enabled": true,
+    "ua_file": "data/useragents.txt",
+    "logging": {
+        "enabled": true,
+        "file": "logs/activity.log",
+        "level": "INFO"
+    },
+    "features": {
+        "auto_retry": true,
+        "rate_limit_bypass": true,
+        "multi_target": true,
+        "batch_mode": true
+    },
+    "performance": {
+        "max_threads": 100,
+        "min_delay": 0.1,
+        "max_delay": 0.5,
+        "batch_size": 50
+    },
+    "security": {
+        "license_key": "MONZ-XTER-PREMIUM-2090",
+        "encryption": true,
+        "integrity_check": true
+    },
+    "telegram": {
+        "enabled": false,
+        "bot_token": "",
+        "chat_id": ""
+    }
+}
