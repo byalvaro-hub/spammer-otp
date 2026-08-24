@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+MONZ XTER STRING RESOURCES
+"""
+
+class Strings:
+    # Banner
+    BANNER = """
+╔══════════════════════════════════════════════════════════════╗
+║  MONZ XTER OTP SPAMMER PRO v3.0                           ║
+║  PREMIUM UNRESTRICTED EDITION                           ║
+║  © 2090 MONZ XTER LABS                                ║
+╚══════════════════════════════════════════════════════════════╝
+    """
+    
+    # Menu
+    MENU = """
+1. START SPAM (Manual)
+2. START SPAM (Batch)
+3. CONFIGURATION
+4. TARGET MANAGER
+5. PROXY MANAGER
+6. VIEW LOGS
+7. LICENSE INFO
+8. EXIT
+    """
+    
+    # Messages
+    MSG_LOADING = "[*] Loading..."
+    MSG_SUCCESS = "[✓] Success!"
+    MSG_ERROR = "[✗] Error!"
+    MSG_WARNING = "[!] Warning!"
+    MSG_INFO = "[*] Info:"
+    
+    # Colors
+    COLOR_SUCCESS = "\033[92m"
+    COLOR_ERROR = "\033[91m"
+    COLOR_WARNING = "\033[93m"
+    COLOR_INFO = "\033[96m"
+    COLOR_RESET = "\033[0m"
+
+class Config:
+    DEFAULT_ENDPOINT = "https://web.whatsapp.com/app/register"
+    DEFAULT_THREADS = 100
+    DEFAULT_DELAY = 0.2
+    DEFAULT_RETRY = 5
+    DEFAULT_TIMEOUT = 5
+    
+class Messages:
+    HELP = """
+Usage: python main.py [options]
+
+Options:
+  --help        Show this help
+  --version     Show version
+  --config      Edit configuration
+  --targets     Open target manager
+    """
+    
+    VERSION = "Monz Xter OTP Spammer Pro v3.0"
+    COPYRIGHT = "© 2090 Monz Xter Labs - All Rights Reserved"
