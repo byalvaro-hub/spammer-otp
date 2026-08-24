@@ -1,0 +1,17 @@
+# Data files
+data/users.json
+data/*.json
+data/*.status
+data/recent.json
+
+# Logs
+logs/*.log
+
+# Config
+config.json
+config/*.local.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
