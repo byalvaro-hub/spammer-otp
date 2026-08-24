@@ -1,0 +1,26 @@
+{
+    "MonzXter_Admin": {
+        "password": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+        "role": "admin",
+        "created": "2090-01-01T00:00:00",
+        "last_login": null,
+        "status": "active",
+        "expiry": null
+    },
+    "Xter_User_Pro": {
+        "password": "c2b4e78a8b0b7bb5f6aa99f25b53e43f60c9a0b564d5e36ff4b2ba8fb9ee9b18",
+        "role": "user",
+        "created": "2090-01-01T00:00:00",
+        "last_login": null,
+        "status": "active",
+        "expiry": "2026-09-07T00:00:00"
+    },
+    "Premium_Xter_Elite": {
+        "password": "d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2g3h4",
+        "role": "premium",
+        "created": "2090-01-01T00:00:00",
+        "last_login": null,
+        "status": "active",
+        "expiry": "2026-09-23T00:00:00"
+    }
+}
