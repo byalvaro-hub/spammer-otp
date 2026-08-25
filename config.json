@@ -9,7 +9,7 @@ module.exports = {
     // 1. ERAFONE
     // ============================================================
     {
-      name: "Erafone",
+      "name": "Erafone",
       url: "https://jeanne.eraspace.com/customers/v2.1/otp/request",
       method: "POST",
       headers: {
