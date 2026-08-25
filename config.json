@@ -457,4 +457,176 @@
             "body": {
                 "action": "login_register",
                 "type": 1,
+                "rcv": "{phone_plus}",
+                "is_resend": false,
+                "payload": {
+                    "mobile": "{phone_plus}",
+                    "term_ids": [330],
+                    "mobile_token": "",
+                    "invite_code": ""
+                },
+                "_rc": "",
+                "rcv_token": ""
+            },
+            "phoneFormat": "plus"
+        },
+        {
+            "name": "Maulagi",
+            "url": "https://api.maulagi.id/api/v2/auth/check",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Origin": "https://maulagi.id",
+                "x-ml-key": "C59RUHBU59",
+                "Accept": "application/json, text/plain, */*",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "credentials": "{phone_08}"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "Rumah123",
+            "url": "https://www.rumah123.com/api/otp/request-otp",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Origin": "https://www.rumah123.com",
+                "base-url-core": "https://www.rumah123.com",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "cancelledRequestId": "{uuid}",
+                "ipAddress": "127.0.0.1",
+                "phoneNumber": "{phone_nocode}",
+                "portalId": 1,
+                "type": "WHATSAPP",
+                "url": "https://www.rumah123.com/user/login?redirect=%2Fcustomer%2Fv3%2Fpasang-iklan%2F"
+            },
+            "phoneFormat": "nocode"
+        },
+        {
+            "name": "Pinhome",
+            "url": "https://www.pinhome.id/api/odyssey/proxy/pinaccount/auth/verification/request-otp",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "text/plain;charset=UTF-8",
+                "Origin": "https://www.pinhome.id",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "accountType": "customers",
+                "applicationType": "Pinhome Web",
+                "countryCode": "62",
+                "medium": "whatsapp",
+                "otpType": "register",
+                "phoneNumber": "{phone_nocode}"
+            },
+            "phoneFormat": "nocode"
+        },
+        {
+            "name": "Bunda Hospital",
+            "url": "https://cms.bunda.co.id/api/v1/auth/send-otp",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Origin": "https://www.bunda.co.id",
+                "x-locale": "id",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "phone_number": "{phone_int}",
+                "type": "auth"
+            },
+            "phoneFormat": "int"
+        },
+        {
+            "name": "Hainaya",
+            "url": "https://app.hainaya.id/api/onboarding/register",
+            "method": "POST",
+            "headers": {
+                "Host": "app.hainaya.id",
+                "sec-ch-ua-platform": "Android",
+                "sec-ch-ua": "Chromium",
+                "sec-ch-ua-mobile": "?1",
+                "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "accept": "application/json, text/plain, */*",
+                "content-type": "application/json",
+                "origin": "https://app.hainaya.id",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-dest": "empty",
+                "referer": "https://app.hainaya.id/onboard",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "accept-language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "body": {
+                "business_name": "{random_business_name}",
+                "vertical": "salon",
+                "vendor_type": "nail_salon",
+                "business_phone": "{phone_nocode}",
+                "owner_name": "",
+                "owner_phone": "{phone_nocode}"
+            },
+            "phoneFormat": "nocode"
+        },
+        {
+            "name": "MinumYukKaka",
+            "url": "https://minumyukkaka.com/services/identity/requestOTP",
+            "method": "POST",
+            "headers": {
+                "Host": "minumyukkaka.com",
+                "sec-ch-ua-platform": "Android",
+                "x-sat": "{random_xsat}",
+                "sec-ch-ua": "Chromium",
+                "sec-ch-ua-mobile": "?1",
+                "x-requested-with": "XMLHttpRequest",
+                "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "accept": "*/*",
+                "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "origin": "https://minumyukkaka.com",
+                "referer": "https://minumyukkaka.com/register",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "accept-language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "body": {
+                "destination": "{phone_08}",
+                "otpLength": "6"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "Sidemang",
+            "url": "https://sidemang.palembang.go.id/api/users/register/send-otp",
+            "method": "POST",
+            "headers": {
+                "Host": "sidemang.palembang.go.id",
+                "sec-ch-ua-platform": "Android",
+                "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "accept": "application/json, text/plain, */*",
+                "sec-ch-ua": "Chromium",
+                "content-type": "application/json",
+                "sec-ch-ua-mobile": "?1",
+                "origin": "https://sidemang.palembang.go.id",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-dest": "empty",
+                "referer": "https://sidemang.palembang.go.id/lambidaro/register-otp",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "accept-language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "cookies": {
+                "_ga": "GA1.1.{random}.{timestamp}",
+                "_ga_0Q2HYJNQP5": "GS2.1.s{timestamp}o1g1t{timestamp}j47l0h0"
+            },
+            "body": {
+                "phoneNumber": "{phone_08}",
+                "email": "{random_email}"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "LaporMasBup",
+            "url": 
      
