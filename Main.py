@@ -8,9 +8,10 @@ PREMIUM UNRESTRICTED EDITION
 
 import sys
 import os
+import time
 import json
 from datetime import datetime
-from colorama import Fore, init, Style
+from colorama import Fore, init
 
 from login import LoginSystem
 from main_engine import MainEngine
@@ -94,7 +95,7 @@ class MonzXterPro:
         return input(Fore.CYAN + "┌─[MONZ@XTER]─[~]\n└──╼ $ ").strip()
 
     # ============================================================
-    # FITUR 1: START SPAM MANUAL
+    # MENU 1: START SPAM MANUAL
     # ============================================================
     def start_spam_manual(self):
         """Input target manual dan jalankan spam"""
@@ -143,10 +144,10 @@ class MonzXterPro:
         input(Fore.CYAN + "\n[+] Press Enter to continue...")
 
     # ============================================================
-    # FITUR 2: START SPAM BATCH
+    # MENU 2: START SPAM BATCH
     # ============================================================
     def start_spam_batch(self):
-        """Jalankan spam dari file batch.txt"""
+        """Jalankan spam dari file batch.txt menggunakan main_engine"""
         if not self.login.check_permission("user"):
             print(Fore.RED + "❌ Akses ditolak! Login terlebih dahulu!")
             input(Fore.CYAN + "\n[+] Press Enter to continue...")
@@ -155,17 +156,67 @@ class MonzXterPro:
         print(Fore.YELLOW + "\n[📂] BATCH MODE")
         print(Fore.WHITE + "="*60)
 
-        targets = self.target_manager.load_from_file()
-        if targets:
-            print(Fore.GREEN + f"[✓] Loaded {len(targets)} targets")
-            self.engine.run(targets)
-        else:
-            print(Fore.RED + "[✗] No targets found!")
+        # Cek file batch.txt
+        batch_file = "data/batch.txt"
+        if not os.path.exists(batch_file):
+            print(Fore.RED + f"[✗] File {batch_file} tidak ditemukan!")
+            print(Fore.YELLOW + "[!] Buat file data/batch.txt dengan satu nomor per baris")
+            input(Fore.CYAN + "\n[+] Press Enter to continue...")
+            return
 
+        # Baca nomor dari file
+        with open(batch_file, "r") as f:
+            lines = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+
+        if not lines:
+            print(Fore.RED + "[✗] Tidak ada nomor di batch.txt!")
+            input(Fore.CYAN + "\n[+] Press Enter to continue...")
+            return
+
+        print(Fore.GREEN + f"[✓] Loaded {len(lines)} nomor dari batch.txt")
+
+        # Tampilkan preview
+        print(Fore.WHITE + "-"*40)
+        for i, phone in enumerate(lines[:5], 1):
+            print(f"  {i}. {phone}")
+        if len(lines) > 5:
+            print(Fore.YELLOW + f"  ... dan {len(lines)-5} nomor lainnya")
+        print(Fore.WHITE + "-"*40)
+
+        confirm = input(Fore.YELLOW + "\n[!] Mulai spam untuk semua nomor? (y/n): ").strip().lower()
+        if confirm != "y":
+            print(Fore.RED + "[✗] Dibatalkan!")
+            input(Fore.CYAN + "\n[+] Press Enter to continue...")
+            return
+
+        # Proses setiap nomor
+        success_total = 0
+        for idx, phone in enumerate(lines, 1):
+            print(Fore.CYAN + f"\n[{idx}/{len(lines)}] Memproses: {phone}")
+
+            # Validasi nomor
+            phone = self.target_manager.validate_phone(phone)
+            if not phone:
+                print(Fore.RED + f"[✗] Nomor {phone} tidak valid, dilewati!")
+                continue
+
+            # Jalankan spam engine untuk satu nomor
+            try:
+                self.engine.run([phone])
+                success_total += 1
+            except Exception as e:
+                print(Fore.RED + f"[✗] Error: {e}")
+
+            # Jeda antar nomor
+            if idx < len(lines):
+                print(Fore.YELLOW + f"\n⏳ Tunggu 3 detik sebelum nomor berikutnya...")
+                time.sleep(3)
+
+        print(Fore.GREEN + f"\n✅ Batch selesai! {success_total}/{len(lines)} nomor diproses.")
         input(Fore.CYAN + "\n[+] Press Enter to continue...")
 
     # ============================================================
-    # FITUR 3: LIHAT KONFIGURASI
+    # MENU 3: LIHAT KONFIGURASI
     # ============================================================
     def show_config(self):
         """Tampilkan konfigurasi saat ini"""
@@ -180,7 +231,7 @@ class MonzXterPro:
         input(Fore.CYAN + "\n[+] Press Enter to continue...")
 
     # ============================================================
-    # FITUR 4: TARGET MANAGER
+    # MENU 4: TARGET MANAGER
     # ============================================================
     def target_manager(self):
         """Manajemen target (tambah/hapus/lihat)"""
@@ -192,7 +243,7 @@ class MonzXterPro:
         self.target_manager.manage()
 
     # ============================================================
-    # FITUR 5: CEK STATUS WHATSAPP
+    # MENU 5: CEK STATUS WHATSAPP
     # ============================================================
     def check_whatsapp_status(self):
         """Cek status nomor WhatsApp menggunakan API kyuurzy.dev"""
@@ -210,7 +261,12 @@ class MonzXterPro:
             if phone.lower() == "exit":
                 break
 
-            from utils import check_whatsapp_number
+            try:
+                from utils import check_whatsapp_number
+            except ImportError:
+                print(Fore.RED + "[✗] Fungsi check_whatsapp_number tidak ditemukan di utils.py")
+                break
+
             result = check_whatsapp_number(phone)
 
             if "error" in result:
@@ -234,7 +290,7 @@ class MonzXterPro:
             print()
 
     # ============================================================
-    # FITUR 6: PROXY MANAGER
+    # MENU 6: PROXY MANAGER
     # ============================================================
     def proxy_manager(self):
         """Lihat daftar proxy yang dimuat"""
@@ -249,7 +305,7 @@ class MonzXterPro:
         input(Fore.CYAN + "\n[+] Press Enter to continue...")
 
     # ============================================================
-    # FITUR 7: VIEW LOGS
+    # MENU 7: VIEW LOGS
     # ============================================================
     def view_logs(self):
         """Lihat log aktivitas"""
@@ -264,7 +320,7 @@ class MonzXterPro:
         input(Fore.CYAN + "\n[+] Press Enter to continue...")
 
     # ============================================================
-    # FITUR 8: USER MANAGEMENT (ADMIN ONLY)
+    # MENU 8: USER MANAGEMENT (ADMIN ONLY)
     # ============================================================
     def user_management(self):
         """Kelola user (hanya admin)"""
@@ -276,7 +332,7 @@ class MonzXterPro:
         self.login.user_menu()
 
     # ============================================================
-    # FITUR 9: LOGOUT
+    # MENU 9: LOGOUT
     # ============================================================
     def logout(self):
         """Logout dari sistem"""
