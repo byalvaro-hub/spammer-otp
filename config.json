@@ -1,16 +1,21 @@
 {
-    "endpoint": "https://shopee.co.id/api/v4/otp/send_vcode",
+    "endpoint": "https://api.bukalapak.com/_exclusive/users/{phone}/verifications",
+    "method": "GET",
     "headers": {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+        "Accept": "*/*",
         "Content-Type": "application/json",
-        "x-csrftoken": "eTv7tWePnRlstNbP3FhCKJG0ihsqN57W",
-        "x-api-source": "rweb",
-        "x-shopee-language": "id",
-        "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36",
-        "Referer": "https://shopee.co.id/buyer/login/otp?__mobile__=1&fu_tracking_id=757d2f7d829-a060-47ff-92db-dd7f9f2a9d1e&next=https%3A%2F%2Fshopee.co.id%2Fsearch%3Fkeyword%3Dwearingklamby%2520official%2520store%26mmp_pid%3Dan_11391061566%26uls_trackid%3D56eqk6vj0635%26utm_campaign%3D-%26utm_content%3Daff_net6-6a89618eb808d80001ff346f-%26utm_medium%3Daffiliates%26utm_source%3Dan_11391061566%26utm_term%3Dfeu8jp3qwygk%26gad_source%3D1",
-        "Cookie": "_sapid=98720f5c780882369d2fc35e3f018ac4b56e446c383ee2eda1f56af4; csrftoken=eTv7tWePnRlstNbP3FhCKJG0ihsqN57W; SPC_SI=3bKGagAAAABEYXZ0SHFaMKNTngAAAAAAOTRSa3hrRGE=; SPC_F=4VcNv1gETVuWwmDp24ksykRMfk6bFzmo; _ga=GA1.1.24335636.1787656941; language=id"
+        "Origin": "https://accounts.bukalapak.com",
+        "Referer": "https://accounts.bukalapak.com/",
+        "x-requested-with": "XMLHttpRequest",
+        "x-request-id": "vTQuQ5uQOtBym8M3p72Tv0_pl-3SsYsUD_wAbsBiNI0_9e38e23c-fe8f-47e4-a547-5fdf04cc1267"
     },
-    "threads": 10,
-    "delay": 1,
+    "query_params": {
+        "feature_name": "registration_marketplace",
+        "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFjY291bnRzLmp3dC5hY2Nlc3MtdG9rZW4tMjAyNTExMTciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmJ1a2FsYXBhay5jb20vIiwic3ViIjoiMjMxZDRhODY5MDVmMGYyNjJjNWUwM2ZjIiwiYXVkIjpbImh0dHBzOi8vYWNjb3VudHMuYnVrYWxhcGFrLmNvbSIsImh0dHBzOi8vYXBpLmJ1a2FsYXBhay5jb20iLCJodHRwczovL2FwaS5zZXJ2ZXJtaXRyYS5jb20iXSwiZXhwIjoxNzg3NjY1NTg1LCJuYmYiOjE3ODc2NTQ0MjUsImlhdCI6MTc4NzY1NDQyNSwianRpIjoiOExBVV9RMDBCOXhFMXhYM1ZzdEt0dyIsImNsaWVudF9pZCI6IjIzMWQ0YTg2OTA1ZjBmMjYyYzVlMDNmYyIsInNjb3BlIjoicHVibGljIn0.ffxYeT207A_aK2ru6s_H8FROaFpG34W_pm1CWTpUHwSu5IPZBr9Mip-gwLkllcjyoM8pMOF5mXJvuKnCe2dA12illde6CTxicruFKS6YaRB4MVwPabbtPYTxJ1FqyHxUgXxv_IYWp5I3dbxniEUtay34SflJu27H8lLXGtnXUMIgp9pzroMZzHBAOh8R8Lb4EBWRWZPs-0-0YFbegjXPwW0m8egNFxuQcjaztQmwRQLWkRLguDdMEef-F_fq6NZbOZyckMsyjOut9eV5nCXVkShUMROoIo-HgB7ZUNi65tcum2zPjCQA2F27fA8pRRlr2F6gkhampeinTL4RJh6Dvw"
+    },
+    "threads": 5,
+    "delay": 2,
     "retry": 3,
     "timeout": 15
 }
