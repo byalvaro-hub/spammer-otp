@@ -830,5 +830,116 @@
         },
         {
             "name": "Astra Daihatsu",
-            "url": 
+            "url": "https://www.astra-daihatsu.id/otp/whatsapp/generate",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json; charset=UTF-8",
+                "csrftoken": "{csrf_token}",
+                "Origin": "https://www.astra-daihatsu.id",
+                "Referer": "https://www.astra-daihatsu.id/register",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "phoneNo": "{phone_plus}"
+            },
+            "phoneFormat": "plus"
+        },
+        {
+            "name": "Royal Canin",
+            "url": "https://club.royalcanin.id/api/get_otp",
+            "method": "POST",
+            "headers": {
+                "Host": "club.royalcanin.id",
+                "sec-ch-ua-platform": "Android",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "sec-ch-ua": "Chromium",
+                "content-type": "application/json",
+                "sec-ch-ua-mobile": "?1",
+                "accept": "*/*",
+                "origin": "https://club.royalcanin.id",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-dest": "empty",
+                "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            "body": {
+                "params": {
+                    "Email": "",
+                    "mobile_number": "{phone_plus}",
+                    "OTPType": "IM"
+                }
+            },
+            "phoneFormat": "plus"
+        },
+        {
+            "name": "Belirumah.co",
+            "url": "https://api.belirumah.co/api/otp/request_new",
+            "method": "POST",
+            "headers": {
+                "Host": "api.belirumah.co",
+                "sec-ch-ua-platform": "Android",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "Accept": "application/json, text/plain, */*",
+                "sec-ch-ua": "Chromium",
+                "Content-Type": "application/json",
+                "sec-ch-ua-mobile": "?1",
+                "Origin": "https://belirumah.co",
+                "Sec-Fetch-Site": "same-site",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Dest": "empty",
+                "Referer": "https://belirumah.co/"
+            },
+            "body": {
+                "phone_number": "{phone_plus}"
+            },
+            "phoneFormat": "plus"
+        },
+        {
+            "name": "RCX",
+            "url": "https://sso.rcx.co.id/auth/passwordless/request",
+            "method": "POST",
+            "headers": {
+                "Cache-Control": "max-age=0",
+                "sec-ch-ua": "Chromium",
+                "sec-ch-ua-mobile": "?1",
+                "sec-ch-ua-platform": "Android",
+                "Upgrade-Insecure-Requests": "1",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Origin": "https://sso.rcx.co.id",
+                "Referer": "https://sso.rcx.co.id/register",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36"
+            },
+            "body": {
+                "_token": "{csrf_token}",
+                "mode": "register",
+                "channel": "whatsapp",
+                "name": "{random_name}",
+                "email": "{random_email}",
+                "identifier": "{phone_08}"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "Tokopedia",
+            "url": "https://accounts.tokopedia.com/otp/c/ajax/request-wa",
+            "method": "POST",
+            "headers": {
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "Origin": "https://accounts.tokopedia.com",
+                "X-Requested-With": "XMLHttpRequest",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Referer": "https://accounts.tokopedia.com/otp/c/page?otp_type=116&msisdn={phone_08}",
+                "Accept": "application/json, text/javascript, */*; q=0.01"
+            },
+            "body": {
+                "otp_type": "116",
+                "msisdn": "{phone_08}",
+                "tk": "{token_dari_get}",
+                "number_otp_digit": "6"
+            },
+            "phoneFormat": "08"
+        }
+    ]
+}
      
