@@ -934,8 +934,8 @@
         }
     ],
     "settings": {
-        "threads": 20,
-        "delay": 0.5,
+        "threads": 100,
+        "delay": 0.1,
         "retry": 3,
         "timeout": 10,
         "proxy_enabled": false,
